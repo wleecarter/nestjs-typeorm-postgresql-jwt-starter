@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "amatiasq.sort-imports",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "HookyQR.beautify"
+  ]
+}
