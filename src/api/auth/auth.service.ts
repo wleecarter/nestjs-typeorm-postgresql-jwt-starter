@@ -1,4 +1,8 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  ConflictException,
+  Injectable,
+} from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
 import { CreateUserDto, UserDto } from '../users/dto';
@@ -19,6 +23,11 @@ export class AuthService {
    * TODO: add complexity validation for password
    */
   public async register(createUserDto: CreateUserDto): Promise<UserDto> {
+    if (!createUserDto.email || !createUserDto.password) {
+      throw new BadRequestException(
+        'Please include both an email and password when registering',
+      );
+    }
     const existingUser = await this.usersService.findByEmail(
       createUserDto.email,
     );

@@ -45,7 +45,7 @@ const isProduction = process.env.NODE_ENV === 'production' ? true : false;
 export class AppModule {
   constructor() {
     console.log(
-      `======= connected to db @ [ ${process.env.DATABASE_HOST} ] ========`,
+      `======= connected to db @ [ ${process.env.DATABASE_HOST} ${process.env.DATABASE_NAME} ] ========`,
     );
   }
 }
